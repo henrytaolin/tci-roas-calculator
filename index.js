@@ -16,7 +16,7 @@ function calculateLoan() {
     leadsValue = document.getElementById("leads").value;
     paidValue = document.getElementById("paid").value;
 
-    penjualanValue = Math.floor(paidValue * hargaValue);
+    penjualanValue = formatCurrency(paidValue * hargaValue);
     cplValue = formatCurrency(costValue / leadsValue);
     cpaValue = formatCurrency(costValue / paidValue);
     roasValue = ((paidValue * hargaValue) / costValue).toFixed(2);
@@ -45,6 +45,6 @@ function calculateLoan() {
         <br>
         ROAS : ${roasValue}
         <br>
-        Penjualan : ${formatCurrency(penjualanValue)}
+        
         `;
 }

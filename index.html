@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROAS Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ROAS Calculator</h1>
+        <p>Event
+            <input onchange="" class="input" type="string" id="event" value="">
+        </p>
+        <p>Mulai Iklan
+            <input onchange="" class="input" type="date" id="mulai-iklan" value="">
+        </p>
+        <p>Hari ini
+            <input onchange="" class="input" type="date" id="hari-ini" value="">
+        </p>
+        <p>Cost
+            <input onchange="" class="input" type="number" id="cost" min="1" max="30000000" value="">
+        </p>
+        <p>Harga
+            <input onchange="" class="input" type="number" id="harga" min="1" max="100000000" value="">
+        </p>
+        <p>Leads
+            <input onchange="" class="input" type="number" id="leads" min="1" max="300" value="">
+        </p>
+        <p>Paid
+            <input onchange="" class="input" type="number" id="paid" min="1" max="300" value="">
+        </p>
+        <div class="center">
+            <button class="btn" onclick="calculateLoan()">SUBMIT</button>
+        </div>
+        <p class="payment" id="payment">Report :<br></p>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

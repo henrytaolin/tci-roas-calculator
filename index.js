@@ -2,6 +2,11 @@
 //     console.log("Change");
 // }
 
+function formatCurrency(number) {
+    return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(number);
+  }
+    
+
 function calculateLoan() {
     eventValue = document.getElementById("event").value;
     mulaiiklanValue = document.getElementById("mulai-iklan").value;
@@ -11,11 +16,14 @@ function calculateLoan() {
     leadsValue = document.getElementById("leads").value;
     paidValue = document.getElementById("paid").value;
 
-    penjualanValue = (paidValue * hargaValue).toFixed(0);
-    cplValue = (costValue / leadsValue).toFixed(0);
-    cpaValue = (costValue / paidValue).toFixed(0);
-    roasValue = (penjualanValue / costValue).toFixed(2);
+    penjualanValue = Math.floor(paidValue * hargaValue);
+    cplValue = formatCurrency(costValue / leadsValue);
+    cpaValue = formatCurrency(costValue / paidValue);
+    roasValue = ((paidValue * hargaValue) / costValue).toFixed(2);
+    
+    costValue = formatCurrency(costValue);
 
+    
     document.getElementById("payment").innerHTML = 
         `Report :
         <br>
@@ -36,5 +44,7 @@ function calculateLoan() {
         Cost : ${costValue}
         <br>
         ROAS : ${roasValue}
+        <br>
+        Penjualan : ${formatCurrency(penjualanValue)}
         `;
 }

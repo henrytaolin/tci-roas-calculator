@@ -16,6 +16,7 @@ function formatCurrency(number) {
     return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: hasDecimal ? 2 : 0 }).format(number);
 }
 
+
 function calculateLoan() {
     eventValue = document.getElementById("event").value;
     // mulaiiklanValue = document.getElementById("mulai-iklan").value;
@@ -26,8 +27,8 @@ function calculateLoan() {
     paidValue = document.getElementById("paid").value;
 
     penjualanValue = formatCurrency(paidValue * hargaValue);
-    cplValue = formatCurrency(costValue / leadsValue);
-    cpaValue = formatCurrency(costValue / paidValue);
+    cplValue = formatCurrency(Math.ceil(costValue / leadsValue));
+    cpaValue = formatCurrency(Math.ceil(costValue / paidValue));
     roasValue = ((paidValue * hargaValue) / costValue).toFixed(2);
     
     costValue = formatCurrency(costValue);

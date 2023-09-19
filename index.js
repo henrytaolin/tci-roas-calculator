@@ -38,9 +38,10 @@ function calculateLoan() {
 
     
     document.getElementById("payment").innerHTML = 
-        `Report :
+        `REPORT :
         <br>
         ${eventValue}
+        <br>
         <br>
         Leads : ${leadsValue}
         <br>
